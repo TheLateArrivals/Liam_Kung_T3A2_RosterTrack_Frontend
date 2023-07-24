@@ -22,7 +22,7 @@ function Register() {
       email: email,
       password: password,
     };
-
+    // Error Handling when registration requirements are not met
     try {
       // Make a POST request to the backend API endpoint '/users/register'
       // Send 'userData' to the server for registration
@@ -45,7 +45,7 @@ function Register() {
       }
     }
   };
-
+  // Successful Registration Message
   return (
     <div>
       {showSuccess ? ( // If registration was successful, display success message
