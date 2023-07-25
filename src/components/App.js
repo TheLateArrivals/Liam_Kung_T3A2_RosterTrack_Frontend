@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.css';
 import Register from './Register'; // Import the Register component
+import logo from '../docs/logo.png'; // Import the logo.png file
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <div className="section-1">
           <div className="logo-title">
             {/* Your logo image goes here */}
-            <img src="logo.png" alt="RosterTrack Logo" className="logo" />
+            <img src={logo} alt="RosterTrack Logo" className="logo" />
             {/* Your app title goes here */}
             <h1 className="title">RosterTrack</h1>
           </div>

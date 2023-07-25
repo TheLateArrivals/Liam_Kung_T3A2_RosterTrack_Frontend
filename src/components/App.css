@@ -26,7 +26,7 @@ body {
   }
   
   .logo {
-    width: 100px;
+    width: 500px;
     margin-right: 10px;
   }
   
@@ -47,18 +47,19 @@ body {
   
   /* Left Section */
   .section-1 {
-    flex: 5;
+    flex: 1;    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(55, 183, 255, 0.4), #FFE1A8);
+    background-color: #FFE1A8;
+    /* background-image: linear-gradient(rgba(55, 183, 255, 0.4), #FFE1A8); */
     outline: 2px dashed green; /* Outline for visual reference */
   }
   
   /* Right Section */
   .section-2 {
-    flex: 2;
+    flex-shrink: 3;    
     display: flex;
     flex-direction: column;
     align-items: center;
