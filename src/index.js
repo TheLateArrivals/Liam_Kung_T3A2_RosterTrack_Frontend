@@ -11,4 +11,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = 'https://frontendlocaltest.00kung.workers.dev/';
