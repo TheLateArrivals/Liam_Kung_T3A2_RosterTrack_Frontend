@@ -11,4 +11,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-axios.defaults.baseURL = 'https://frontendlocaltest.00kung.workers.dev/';
+axios.defaults.baseURL = 'process.env.REACT_APP_API_BASE_URL';
