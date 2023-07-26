@@ -1,6 +1,8 @@
 // Register.js
 import React, { useState } from 'react';
 import axios from 'axios';
+require('dotenv').config();
+
 
 function Register() {
   // State variables to store user input for username, email, and password
@@ -26,7 +28,7 @@ function Register() {
     try {
       // Make a POST request to the backend API endpoint '/users/register'
       // Send 'userData' to the server for registration
-      const response = await axios.post('http://localhost:8080/users/register', userData);
+      const response = await axios.post(process.env.REACT_APP_BACKEND_URL, userData);
       const token = response.data; // Get the token from the response data received from the server
       console.log('Received token:', token); // Log the received token to the console
       setShowSuccess(true); // Display success message on successful registration
