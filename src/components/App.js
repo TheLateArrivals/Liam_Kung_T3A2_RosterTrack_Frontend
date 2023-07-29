@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-ro
 import Register from './Register';
 import Login from './Login';
 import Dashboard from '../pages/Dashboard'; // Import the Dashboard component
+import Profile from '../pages/Profile'; // Import the Profile component
 import logo from '../docs/logo.png';
 
 function App() {
@@ -47,8 +48,8 @@ function App() {
             </div>
           }/>
           <Route path="/login" element={<Login handleLogin={handleLogin} />} />
-          {/* Update the route to refer to the Dashboard */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <footer className="footer">
           {/* Footer content goes here */}
