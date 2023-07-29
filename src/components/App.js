@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Register from './Register'; // Import the Register component
 import Login from './Login'; // Import the Login component
+import Dashboard from './Dashboard'; // Import the Dashboard component
 import logo from '../docs/logo.png'; // Import the logo.png file
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             </div>
           }/>
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard route */}
         </Routes>      
         {/* Your app's footer goes here (if needed) */}
         <footer className="footer">

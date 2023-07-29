@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate(); // Hook to navigate to different pages
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -13,6 +15,11 @@ const Login = () => {
         username,
         password,
       });
+
+      // If login is successful, redirect to dashboard page
+      if (response.data.success) {
+        navigate('/dashboard');
+      }
 
     } catch (error) {
       setErrorMessage('Invalid username or password');
@@ -35,7 +42,7 @@ const Login = () => {
           <button type="submit">Login</button>
         </div>
       </form>
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <p>Sorry, wrong username or password</p>}
     </div>
   );
 };
