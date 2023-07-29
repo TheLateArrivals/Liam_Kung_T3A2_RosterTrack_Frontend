@@ -15,16 +15,17 @@ const Login = () => {
         username,
         password,
       });
-
-      // If login is successful, redirect to dashboard page
-      if (response.data.success) {
+  
+      // If login is successful (token is present), redirect to dashboard page
+      if (response.data.token) {
         navigate('/dashboard');
       }
-
+  
     } catch (error) {
       setErrorMessage('Invalid username or password');
     }
   };
+  
 
   return (
     <div>
