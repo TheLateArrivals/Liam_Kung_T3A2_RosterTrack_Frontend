@@ -5,6 +5,7 @@ import Register from './Register';
 import Login from './Login';
 import Dashboard from '../pages/Dashboard'; // Import the Dashboard component
 import Profile from '../pages/Profile'; // Import the Profile component
+import Shifts from '../pages/Shifts'; // Import the Shift component
 import logo from '../docs/logo.png';
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/login" element={<Login handleLogin={handleLogin} />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/Shifts" element={<Shifts />} />
         </Routes>
         <footer className="footer">
           {/* Footer content goes here */}
