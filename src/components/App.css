@@ -141,6 +141,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
   }
   
   .nav-list {
@@ -148,6 +149,8 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-grow: 1;
+    justify-content: center;
   }
   
   .nav-list li {
