@@ -22,7 +22,7 @@ const Navbar = () => {
 
         {/* Navbar Links */}
         <ul className="nav-list">
-          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/dashboard">Home</Link></li>
           <li><Link to="/scheduler">Scheduler</Link></li>
           <li><Link to="/my-team">My Team</Link></li>
           <li><Link to="/message">Message</Link></li>

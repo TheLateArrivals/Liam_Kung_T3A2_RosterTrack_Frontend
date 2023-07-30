@@ -4,22 +4,24 @@ import 'react-calendar/dist/Calendar.css';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 
+const RosterContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 const CalendarContainer = styled.div`
-  height: 100vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  border: 1px solid #ccc;
 `;
-
 
 const StyledCalendar = styled(Calendar)`
   width: 100%;
   height: 100%; /* Set the height to 100% of the container */
-  border: 1px solid #ccc;
 `;
 
 function Roster() {
@@ -44,8 +46,8 @@ function Roster() {
   }, []);
 
   return (
-    <div className="roster">
-       <Navbar />
+    <RosterContainer>
+      <Navbar />
       <h2>Roster Calendar View</h2>
       <CalendarContainer>
         <StyledCalendar />
@@ -61,7 +63,8 @@ function Roster() {
           </li>
         ))}
       </ul>
-    </div>
+      {/* Your footer component here (outside the .roster component) */}
+    </RosterContainer>
   );
 }
 
