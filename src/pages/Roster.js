@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import styled from 'styled-components';
+import Navbar from '../components/Navbar';
 
 
 const CalendarContainer = styled.div`
@@ -44,6 +45,7 @@ function Roster() {
 
   return (
     <div className="roster">
+       <Navbar />
       <h2>Roster Calendar View</h2>
       <CalendarContainer>
         <StyledCalendar />

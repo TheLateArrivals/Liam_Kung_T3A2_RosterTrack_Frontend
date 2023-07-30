@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
 
 function Shifts() {
   const [shifts, setShifts] = useState([]);
@@ -24,6 +25,7 @@ function Shifts() {
 
   return (
     <div className="shifts">
+      <Navbar />
       <h2>Shifts Page</h2>
       <ul>
         {shifts.map((shift) => (

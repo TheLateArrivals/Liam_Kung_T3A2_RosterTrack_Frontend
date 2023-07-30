@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
 
 function Profile() {
   const [profileData, setProfileData] = useState(null);
@@ -35,6 +36,7 @@ function Profile() {
 
   return (
     <div className="profile">
+       <Navbar />
       <h2>Profile</h2>
       {profileData ? (
         <div>
