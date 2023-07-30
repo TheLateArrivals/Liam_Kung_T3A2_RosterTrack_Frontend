@@ -5,6 +5,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Register from './Register'; // Import the Register component
 import Login from './Login'; // Import the Login component
 import Dashboard from './Dashboard'; // Import the Dashboard component
+import Roster from '../pages/Roster'; // Import the Roster component
+import Profile from '../pages/Profile'; // Import the Profile component
+import Shifts from '../pages/Shifts'; // Import the Shifts component
+
+
+
 import logo from '../docs/logo.png'; // Import the logo.png file
 
 function App() {
@@ -45,6 +51,9 @@ function App() {
           }/>
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard route */}
+          <Route path="/scheduler" element={<Roster />} />
+          <Route path="/settings" element={<Profile />} />
+          <Route path="/my-team" element={<Shifts />} />
         </Routes>      
         {/* Your app's footer goes here (if needed) */}
         <footer className="footer">
