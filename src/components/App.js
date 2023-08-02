@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Auth from './Auth';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Register from './Register'; // Import the Register component
-import Login from './Login'; // Import the Login component
-import Dashboard from './Dashboard'; // Import the Dashboard component
-import MyTeam from './MyTeam'; // Import the MyTeam component
-import Scheduler from './Scheduler'; // Import the Scheduler component
-import Settings from './Settings'; // Import the Settings component
-import Message from './Message'; // Import the Message component
-import logo from '../docs/logo.png'; // Import the logo.png file
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './Register';
+import Login from './Login';
+import NavBar from './NavBar';
+import Dashboard from './Dashboard';
+import MyTeam from './MyTeam';
+import Scheduler from './Scheduler';
+import Settings from './Settings';
+import Message from './Message';
+import logo from '../docs/logo.png';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <div className="app">
@@ -22,36 +26,36 @@ function App() {
         <Routes>
           <Route path="/" element={
             <div className="main-content">
-              {/* Left section */}
               <div className="section-1">
                 <div className="logo-title">
-                  {/* Logo image goes here */}
                   <img src={logo} alt="RosterTrack Logo" className="logo" />
-                  {/* Title goes here */}
                   <h1 className="title">RosterTrack</h1>
                 </div>
               </div>
-              {/* Right section */}
               <div className="section-2">
-                {/* Introduction text */}
                 <h2 className="intro">Simplifying team scheduling. Transform your rostering experience today.</h2>
-                {/* Sign-up form */}
                 <div className="sign-up-form">
                   <Register />
-                  {/* Link to login */}
                   <p className="login-link">
-                    Already have an account? <Link to="/login">Log in</Link>
+                    Already have an account? <a href="/login">Log in</a>
                   </p>
                 </div>
               </div>
             </div>
-          }/>
+          } />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/my-team" element={<MyTeam />} />
-          <Route path="/scheduler" element={<Scheduler />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/message" element={<Message />} />
+          <Route path="/*" element={
+            <Auth.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+              <NavBar handleLogout={() => setIsLoggedIn(false)} />
+              <Routes>
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="my-team" element={<MyTeam />} />
+                <Route path="scheduler" element={<Scheduler />} />
+                <Route path="settings" element={<Settings />} />
+                <Route path="message" element={<Message />} />
+              </Routes>
+            </Auth.Provider>
+          } />
         </Routes>
         {/* Footer goes here */}
         <footer className="footer">

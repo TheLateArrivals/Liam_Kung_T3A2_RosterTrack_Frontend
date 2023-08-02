@@ -1,22 +1,14 @@
-import React, { useContext } from 'react';
-import Auth from './Auth';
-import Navbar from './NavBar';
+import React from 'react';
 
 const Dashboard = () => {
-  const { setIsLoggedIn } = useContext(Auth);
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
-
-  return (
-    <div>
-      <Navbar handleLogout={handleLogout} />
-      <div className="dashboard-content">
-        {/* Dashboard Content Goes Here */}
+    return (
+      <div>        
+        <div className="dashboard-content">
+          {/* dashboard Content Goes Here */}
+          <h1>Under Construction</h1>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default Dashboard;
