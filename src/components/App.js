@@ -5,10 +5,6 @@ import Register from './Register'; // Import the Register component
 import Login from './Login'; // Import the Login component
 import NavBar from './NavBar'; // Import the NavBar component
 import Dashboard from './Dashboard'; // Import the Dashboard component
-import MyTeam from './MyTeam'; // Import the MyTeam component
-import Scheduler from './Scheduler'; // Import the Scheduler component
-import Settings from './Settings'; // Import the Settings component
-import Message from './Message'; // Import the Message component
 import logo from '../docs/logo.png'; // Import the logo.png file
 
 function App() {
@@ -48,10 +44,9 @@ function App() {
             </div>
           }/>
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/*" element={<div><NavBar /><Routes><Route path="home" element={<Dashboard />} /><Route path="my-team" element={<MyTeam />} /><Route path="scheduler" element={<Scheduler />} /><Route path="settings" element={<Settings />} /><Route path="message" element={<Message />} /></Routes></div>}>
-          </Route>
-        </Routes>
-        {/* Footer goes here */}
+          <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard route */}
+        </Routes>      
+        {/* Your app's footer goes here (if needed) */}
         <footer className="footer">
           {/* Footer content goes here */}
         </footer>
