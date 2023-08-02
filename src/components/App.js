@@ -1,17 +1,21 @@
-// App.js
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Register from './Register'; // Import the Register component
 import Login from './Login'; // Import the Login component
+import NavBar from './NavBar'; // Import the NavBar component
 import Dashboard from './Dashboard'; // Import the Dashboard component
+import MyTeam from './MyTeam'; // Import the MyTeam component
+import Scheduler from './Scheduler'; // Import the Scheduler component
+import Settings from './Settings'; // Import the Settings component
+import Message from './Message'; // Import the Message component
 import logo from '../docs/logo.png'; // Import the logo.png file
 
 function App() {
   return (
     <Router>
       <div className="app">
-        {/* Your app's header goes here (if needed) */}
+        {/* Header goes here (if needed) */}
         <header className="header">
           {/* Header content goes here */}
         </header>
@@ -22,9 +26,9 @@ function App() {
               {/* Left section */}
               <div className="section-1">
                 <div className="logo-title">
-                  {/* Your logo image goes here */}
+                  {/* Logo image goes here */}
                   <img src={logo} alt="RosterTrack Logo" className="logo" />
-                  {/* Your app title goes here */}
+                  {/* Title goes here */}
                   <h1 className="title">RosterTrack</h1>
                 </div>
               </div>
@@ -44,9 +48,10 @@ function App() {
             </div>
           }/>
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard route */}
-        </Routes>      
-        {/* Your app's footer goes here (if needed) */}
+          <Route path="/dashboard/*" element={<div><NavBar /><Routes><Route path="home" element={<Dashboard />} /><Route path="my-team" element={<MyTeam />} /><Route path="scheduler" element={<Scheduler />} /><Route path="settings" element={<Settings />} /><Route path="message" element={<Message />} /></Routes></div>}>
+          </Route>
+        </Routes>
+        {/* Footer goes here */}
         <footer className="footer">
           {/* Footer content goes here */}
         </footer>
