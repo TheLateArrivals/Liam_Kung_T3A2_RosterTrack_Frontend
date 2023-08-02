@@ -132,7 +132,7 @@ body {
   .navbar {
     display: flex;
     justify-content: center;
-    background-color: #227F93;
+    background-color: #FFE1A8;
   }
   
   .navbar-container {
@@ -181,7 +181,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #227F93;
+      background-color: #FFE1A8;
       display: none; /* Initially hide the menu */
     }
   

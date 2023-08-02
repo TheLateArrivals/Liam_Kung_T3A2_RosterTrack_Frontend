@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Register from './Register'; // Import the Register component
 import Login from './Login'; // Import the Login component
-import NavBar from './NavBar'; // Import the NavBar component
 import Dashboard from './Dashboard'; // Import the Dashboard component
 import MyTeam from './MyTeam'; // Import the MyTeam component
 import Scheduler from './Scheduler'; // Import the Scheduler component
@@ -48,8 +47,11 @@ function App() {
             </div>
           }/>
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/*" element={<div><NavBar /><Routes><Route path="home" element={<Dashboard />} /><Route path="my-team" element={<MyTeam />} /><Route path="scheduler" element={<Scheduler />} /><Route path="settings" element={<Settings />} /><Route path="message" element={<Message />} /></Routes></div>}>
-          </Route>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/my-team" element={<MyTeam />} />
+          <Route path="/scheduler" element={<Scheduler />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/message" element={<Message />} />
         </Routes>
         {/* Footer goes here */}
         <footer className="footer">

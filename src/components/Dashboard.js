@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Auth from './Auth';
+import Navbar from './NavBar';
 
 const Dashboard = () => {
   const { setIsLoggedIn } = useContext(Auth);
@@ -10,7 +11,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <button onClick={handleLogout}>Logout</button>
+      <Navbar handleLogout={handleLogout} />
       <div className="dashboard-content">
         {/* Dashboard Content Goes Here */}
       </div>
