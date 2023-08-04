@@ -94,7 +94,18 @@ const Scheduler = () => {
           </label>
           <label>
             Location:
-            <input type="text" name="location" value={newShift.location} onChange={handleInputChange} />
+            <select name="location" value={newShift.location} onChange={handleInputChange}>
+    <option value="">Select a Location</option>
+    <option value="Room A">Room A</option>
+    <option value="Room B">Room B</option>
+    <option value="Room C">Room C</option>
+    <option value="Room D">Room D</option>
+    <option value="Room E">Room E</option>
+    <option value="Room F">Room F</option>
+    <option value="Room G">Room G</option>
+    <option value="Kitchen">Kitchen</option>
+    <option value="Office">Office</option>
+  </select>
           </label>
           <button type="submit">Create Shift</button>
         </form>
