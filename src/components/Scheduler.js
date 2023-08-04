@@ -31,7 +31,13 @@ const Scheduler = () => {
   };
 
   const handleDateChange = date => {
+    // Set the selected date
     setNewShift(prevShift => ({ ...prevShift, date }));
+    
+    // Automatically set the day based on the selected date
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const selectedDay = days[date.getDay()];
+    setNewShift(prevShift => ({ ...prevShift, day: selectedDay }));
   };
 
   const handleSubmit = async event => {
@@ -66,7 +72,7 @@ const Scheduler = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Day:
-            <input type="text" name="day" value={newShift.day} onChange={handleInputChange} />
+            <input type="text" name="day" value={newShift.day} readOnly />
           </label>
           <label>
             Date:
