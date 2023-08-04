@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-const Dashboard = () => {
+const Scheduler = () => {
   const [shifts, setShifts] = useState([]);
   const [newShift, setNewShift] = useState({
     day: '',
-    date: '',
+    date: new Date(), // Set initial date to today
     employee_id: '',
     startTime: '',
     endTime: '',
@@ -28,14 +30,22 @@ const Dashboard = () => {
     setNewShift(prevShift => ({ ...prevShift, [name]: value }));
   };
 
+  const handleDateChange = date => {
+    setNewShift(prevShift => ({ ...prevShift, date }));
+  };
+
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      const response = await axios.post('/shifts', newShift);
+      const response = await axios.post('/shifts', {
+        ...newShift,
+        startTime: new Date(newShift.startTime), // Convert to Date object
+        endTime: new Date(newShift.endTime), // Convert to Date object
+      });
       setShifts(prevShifts => [...prevShifts, response.data]);
       setNewShift({
         day: '',
-        date: '',
+        date: new Date(),
         employee_id: '',
         startTime: '',
         endTime: '',
@@ -48,10 +58,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="dashboard-content">
+      <div className="scheduler-content">
         {/* Display Shifts */}
         
-
         {/* Create New Shift Form */}
         <h2>Create New Shift</h2>
         <form onSubmit={handleSubmit}>
@@ -61,7 +70,7 @@ const Dashboard = () => {
           </label>
           <label>
             Date:
-            <input type="text" name="date" value={newShift.date} onChange={handleInputChange} />
+            <DatePicker selected={newShift.date} onChange={handleDateChange} />
           </label>
           <label>
             Employee ID:
@@ -86,4 +95,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Scheduler;
