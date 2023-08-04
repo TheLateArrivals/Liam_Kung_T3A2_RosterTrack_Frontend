@@ -23,31 +23,24 @@ const Dashboard = () => {
       });
   }, []);
 
-
-
-
-
   return (
-    <div>
-      <div className="dashboard-content">
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+      <div className="dashboard-content" style={{ maxWidth: '600px', width: '100%', textAlign: 'center' }}>
         {/* Display Shifts */}
         <h1>Shifts</h1>
-        <ul>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
           {shifts.map(shift => (
-            <li key={shift._id}>
+            <li key={shift._id} style={{ margin: '20px 0', borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
               {/* Display shift details */}
-              Day: {shift.day}<br />
-              Date: {shift.date}<br />
-              Employee ID: {shift.employee_id}<br />
-              Start Time: {shift.startTime}<br />
-              End Time: {shift.endTime}<br />
-              Location: {shift.location}
-              <hr />
+              <strong>Day:</strong> {shift.day}<br />
+              <strong>Date:</strong> {shift.date}<br />
+              <strong>Employee:</strong> {shift.employee_id}<br />
+              <strong>Start Time:</strong> {shift.startTime}<br />
+              <strong>End Time:</strong> {shift.endTime}<br />
+              <strong>Location:</strong> {shift.location}
             </li>
           ))}
         </ul>
-
-
       </div>
     </div>
   );
