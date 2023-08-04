@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Register';
 import Login from './Login';
-import NavBar from './NavBar';
+import NavBar from '../components/Navbar';
 import Dashboard from './Dashboard';
 import MyTeam from './MyTeam';
 import Scheduler from './Scheduler';
