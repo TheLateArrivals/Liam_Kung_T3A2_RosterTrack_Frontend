@@ -1,7 +1,11 @@
-import React from 'react'; // Imports the React library
-import ReactDOM from 'react-dom'; // Imports the ReactDOM library, which provides DOM-specific methods
-import App from './components/App'; // Imports the App component
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
 import axios from 'axios';
+
+const url = process.env.REACT_APP_API_BASE_URL;
+
+axios.defaults.baseURL = url;
 
 // Calls ReactDOM.render to render the App component into the div with id 'root'
 ReactDOM.render(
@@ -10,5 +14,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;

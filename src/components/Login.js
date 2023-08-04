@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ onLogin }) => { // Receive the onLogin prop
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -15,9 +15,14 @@ const Login = () => {
         username,
         password,
       });
-  
-      // If login is successful (token is present), redirect to dashboard page
+
+      // If login is successful, set user details and navigate to dashboard
       if (response.data.token) {
+        const userDetails = {
+          name: username, // You can replace this with actual data from the response
+          // Add other details as needed
+        };
+        onLogin(userDetails); // Call onLogin prop with user details
         navigate('/dashboard');
       }
   
@@ -25,7 +30,6 @@ const Login = () => {
       setErrorMessage('Invalid username or password');
     }
   };
-  
 
   return (
     <div>

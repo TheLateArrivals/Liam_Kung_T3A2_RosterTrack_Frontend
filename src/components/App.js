@@ -14,15 +14,20 @@ import logo from '../docs/logo.png';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userDetails, setUserDetails] = useState(null); // Store user details
+
+  // Modify this function to accept user details when called
+  const handleLogin = (details) => {
+    setIsLoggedIn(true);
+    setUserDetails(details); // Store user details
+  };
 
   return (
     <Router>
       <div className="app">
-        {/* Header goes here (if needed) */}
         <header className="header">
           {/* Header content goes here */}
         </header>
-        {/* Main content section */}
         <Routes>
           <Route path="/" element={
             <div className="main-content">
@@ -43,12 +48,12 @@ function App() {
               </div>
             </div>
           } />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/*" element={
             <Auth.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-              <NavBar handleLogout={() => setIsLoggedIn(false)} />
+              <NavBar handleLogout={() => {setIsLoggedIn(false); setUserDetails(null);}} />
               <Routes>
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="dashboard" element={<Dashboard userDetails={userDetails} />} />
                 <Route path="my-team" element={<MyTeam />} />
                 <Route path="scheduler" element={<Scheduler />} />
                 <Route path="settings" element={<Settings />} />
@@ -57,7 +62,6 @@ function App() {
             </Auth.Provider>
           } />
         </Routes>
-        {/* Footer goes here */}
         <footer className="footer">
           {/* Footer content goes here */}
         </footer>
