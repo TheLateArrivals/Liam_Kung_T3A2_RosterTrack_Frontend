@@ -81,7 +81,7 @@ const Scheduler = () => {
             <DatePicker selected={newShift.date} onChange={handleDateChange} />
           </label>
           <label>
-            Employee ID:
+            Employee Name:
             <input type="text" name="employee_id" value={newShift.employee_id} onChange={handleInputChange} />
           </label>
           <label>
