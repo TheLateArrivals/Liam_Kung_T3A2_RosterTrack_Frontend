@@ -8,7 +8,7 @@ import NavBar from '../components/Navbar';
 import Dashboard from './Dashboard';
 import MyTeam from './MyTeam';
 import Scheduler from './Scheduler';
-import Settings from './Settings';
+import Shifts from './Shifts';
 import Message from './Message';
 import logo from '../docs/logo.png';
 
@@ -56,7 +56,7 @@ function App() {
                 <Route path="dashboard" element={<Dashboard userDetails={userDetails} />} />
                 <Route path="my-team" element={<MyTeam />} />
                 <Route path="scheduler" element={<Scheduler />} />
-                <Route path="settings" element={<Settings />} />
+                <Route path="shifts" element={<Shifts />} />
                 <Route path="message" element={<Message />} />
               </Routes>
             </Auth.Provider>

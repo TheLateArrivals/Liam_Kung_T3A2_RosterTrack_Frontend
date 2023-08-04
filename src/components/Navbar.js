@@ -18,7 +18,7 @@ const Navbar = ({ handleLogout }) => {
           <li><Link to="/scheduler">Scheduler</Link></li>
           <li><Link to="/my-team">My Team</Link></li>
           <li><Link to="/message">Message</Link></li>
-          <li><Link to="/settings">Settings</Link></li>          
+          <li><Link to="/shifts">Shifts</Link></li>          
         </ul>
       </div>
     </nav>
