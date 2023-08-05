@@ -26,7 +26,7 @@ body {
   }
   
   .logo {
-    width: 500px;
+    width: 200px;
     margin-right: 10px;
   }
   
@@ -49,8 +49,9 @@ body {
     outline: 2px dashed blue; /* Outline for visual reference */
   }
   
-  /* Left Section */
+  /* top content */
   .section-1 {
+    width: 100%;
     flex: 1;    
     display: flex;
     flex-direction: column;
@@ -61,7 +62,7 @@ body {
     outline: 2px dashed green; /* Outline for visual reference */
   }
   
-  /* Right Section */
+  /* Bottom Section Sign up/login */
   .section-2 {
     flex-shrink: 3;    
     display: flex;
@@ -125,7 +126,7 @@ body {
     outline: 2px dashed purple; /* Outline for visual reference */
   }
   
-  /* DASHBOARD */
+  /* Desktop */
 
   /*Nav Bar */
 
@@ -165,34 +166,42 @@ body {
   .menu-toggle {
     display: none; /* Initially hide on desktop */
   }
-  
-  /* Mobile Styles */
-  @media screen and (max-width: 768px) {
-    .menu-toggle {
-      display: block; /* Show menu icon on mobile */
-    }
-  
-    .nav-list {
-      width: 100%;
-      height: 100vh;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #FFE1A8;
-      display: none; /* Initially hide the menu */
-    }
-  
-    .nav-list li {
-      margin: 20px 0;
-    }
-  
-    .nav-list.active {
-      display: flex; /* Show menu when active */
-    }
+
+  .nav-list {
+    display: flex;
   }
+
+  .navbar-logo {
+    height: 50px;  /* adjust as needed */
+    /* add additional styling as needed */
+  }
+  
+  
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list.open {
+    display: block;
+    position: absolute;
+    background-color: #FFE1A8;
+    width: 100%;
+    left: 0;
+    top: 60px; /* adjust as needed depending on the height of your navbar */
+  }
+
+  .nav-list.open li {
+    border-top: 1px solid #ddd; /* optional: add a border between links */
+    padding: 10px;
+  }
+}
+
   
   /* Hamburger Menu Styles */
   .bar {
