@@ -80,7 +80,7 @@ body {
   }
   
 
-/* sign-up section */
+/* sign-up or login section */
 
   .sign-up-form {
     display: flex;
@@ -116,6 +116,16 @@ body {
     display: block;
   }
   
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Adds some space between form elements */
+  }
+  
+  .form-control {
+    width: 100%; /* Makes the input boxes take up the full width of the form */
+  }
+
   /* Footer Section */
   .footer {
     background-color: #227F93;
@@ -172,8 +182,7 @@ body {
   }
 
   .navbar-logo {
-    height: 50px;  /* adjust as needed */
-    /* add additional styling as needed */
+    height: 100px;  
   }
   
   
