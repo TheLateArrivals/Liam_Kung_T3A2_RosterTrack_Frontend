@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';  // Import the Link component
 
 const Login = ({ onLogin }) => { // Receive the onLogin prop
   const [username, setUsername] = useState('');
@@ -50,6 +50,9 @@ const Login = ({ onLogin }) => { // Receive the onLogin prop
             </div>
           </form>
           {errorMessage && <p>Sorry, wrong username or password</p>}
+          <div className="form-group">
+            <Link to="/">Sign Up</Link>  {/* Add the Link component */}
+          </div>
         </div>
       </div>
     </div>

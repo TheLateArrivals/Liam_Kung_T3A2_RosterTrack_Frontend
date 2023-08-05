@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate hook
 import logo from '../docs/logo.png';
+import { ReactComponent as LogoutIcon } from '../docs/logout.svg';
 
 const Navbar = ({ handleLogout }) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate(); // Hook to navigate to different pages
 
   const handleMenuToggle = () => {
     setOpen(!open);
@@ -11,6 +13,12 @@ const Navbar = ({ handleLogout }) => {
 
   const closeMenu = () => {
     setOpen(false);
+  };
+
+  // Function to handle logout
+  const handleUserLogout = () => {
+    handleLogout(); // Call the handleLogout prop
+    navigate('/login'); // Redirect to login page
   };
 
   return (
@@ -32,7 +40,11 @@ const Navbar = ({ handleLogout }) => {
           <li><Link to="/scheduler" onClick={closeMenu}>Scheduler</Link></li>
           <li><Link to="/my-team" onClick={closeMenu}>My Team</Link></li>
           <li><Link to="/message" onClick={closeMenu}>Message</Link></li>
-          <li><Link to="/shifts" onClick={closeMenu}>Shifts</Link></li>          
+          <li><Link to="/shifts" onClick={closeMenu}>Shifts</Link></li>    
+          {/* Logout Icon */}
+          <li className="nav-item">
+            <LogoutIcon className="navbar-icon" onClick={handleUserLogout} />
+          </li>
         </ul>
       </div>
     </nav>

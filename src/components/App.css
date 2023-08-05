@@ -184,6 +184,14 @@ body {
   .navbar-logo {
     height: 100px;  
   }
+
+  .navbar-icon {
+    height: 12px;
+    margin-left: auto; /* icon to the right */
+    cursor: pointer;
+  }
+
+  
   
   
 /* Mobile Styles */
