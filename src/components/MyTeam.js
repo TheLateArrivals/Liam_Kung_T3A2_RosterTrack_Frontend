@@ -1,79 +1,88 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import axios from 'axios';
+import axios from 'axios'; // We import axios to make HTTP requests
 
 const MyTeam = () => {
-  const localizer = momentLocalizer(moment);
-  const [shifts, setShifts] = useState([]);
-  const [selectedShift, setSelectedShift] = useState(null);
+  // These are boxes where we can keep and change our data
+  const [staffList, setStaffList] = useState([]);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
 
-  useEffect(() => {
-    // Fetch shifts from the backend
-    axios.get('/shifts') 
-      .then(response => {
-        setShifts(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching shifts:', error);
-      });
-  }, []);
+    // Fetch all staff members from the server when the component mounts
+    useEffect(() => {
+      const fetchStaffMembers = async () => {
+        try {
+          const response = await axios.get('http://localhost:3000/user/staff');
+          setStaffList(response.data);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+  
+      fetchStaffMembers();
+    }, []);
+  
 
-  const events = shifts.map(shift => ({
-    id: shift._id,
-    title: shift.employee_id,
-    start: new Date(shift.date), 
-    end: new Date(shift.date),
-  }));
+  // This does something when we click the "Add Staff" button
+  const handleAddStaff = async (e) => {
+    e.preventDefault(); // This stops the page from refreshing
+    const newStaffMember = { firstName, lastName, email }; // This is the new staff member we want to add
+    setStaffList([...staffList, newStaffMember]); // Adds the new staff member to our list
+    setFirstName(''); // Clears the first name box
+    setLastName(''); // Clears the last name box
+    setEmail(''); // Clears the email box
 
-  const handleEventSelect = event => {
-    const selectedShiftData = shifts.find(shift => shift._id === event.id);
-    setSelectedShift(selectedShiftData);
+    try {
+      // This sends the new staff member to our server to be saved in the database
+      await axios.post('http://localhost:3000/user/staff', newStaffMember);
+    } catch (err) {
+      console.error(err); // If something goes wrong, we log the error
+    }
   };
 
-  const handleCloseShiftDetails = () => {
-    setSelectedShift(null);
+    // Define handleDeleteStaff here
+  const handleDeleteStaff = (index) => {
+    const newStaffList = [...staffList];
+    newStaffList.splice(index, 1);
+    setStaffList(newStaffList);
   };
 
-  const shiftDetailsStyle = {
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
-    backgroundColor: '#fff',
-    padding: '10px',
-    boxShadow: '0 0 5px rgba(0, 0, 0, 0.3)',
-    zIndex: 1000,
-    transition: 'transform 0.6s ease',
-    transform: selectedShift ? 'scale(2)' : 'scale(0)',
-    transformOrigin: 'top right',
-  };
-
+  
   return (
     <div>
-      <div className="my-team-content">
-        {/* MyTeam Content Goes Here */}
-        <h1>My Team's Calendar</h1>
-        <div style={{ position: 'relative', height: 600 }}>
-          <Calendar localizer={localizer} events={events} startAccessor="start" endAccessor="end" onSelectEvent={handleEventSelect} />
-          <div style={shiftDetailsStyle}>
-            {selectedShift && (
-              <div>
-                <button onClick={handleCloseShiftDetails} style={{ position: 'absolute', top: '5px', right: '5px' }}>
-                  X
-                </button>
-                <h2>Selected Shift</h2>
-                <p><strong>Day:</strong> {selectedShift.day}</p>
-                <p><strong>Date:</strong> {selectedShift.date}</p>
-                <p><strong>Employee:</strong> {selectedShift.employee_id}</p>
-                <p><strong>Start Time:</strong> {selectedShift.startTime}</p>
-                <p><strong>End Time:</strong> {selectedShift.endTime}</p>
-                <p><strong>Location:</strong> {selectedShift.location}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+      <h2>My Team</h2>
+      <form onSubmit={handleAddStaff}> 
+        {/* Input boxes */}
+        <input
+          type="text"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="Enter first name"
+        />
+        <input
+          type="text"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Enter last name"
+        />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter email"
+        />
+        {/* Add Staff"button */}
+        <button type="submit">Add Staff</button>
+      </form>
+      {/* List of staff members */}
+      <ul>
+        {staffList.map((staff, index) => (
+          <li key={index}>
+            {staff.firstName} {staff.lastName} - {staff.email}
+            <button onClick={() => handleDeleteStaff(index)}>Delete Staff</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

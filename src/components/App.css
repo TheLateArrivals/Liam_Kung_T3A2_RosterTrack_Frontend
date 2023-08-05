@@ -229,3 +229,35 @@ body {
     display: block;
   }
   
+
+/* Calendar */
+.scheduler-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem; /* Adjust as needed */
+}
+
+.calendar-container {
+  text-align: center;
+}
+
+.event-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.event-title {
+  text-align: center;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+
