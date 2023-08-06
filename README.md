@@ -57,11 +57,11 @@ Childcare educators and organisations seeking a streamlined solution for managin
 
 ## R2: Dataflow Diagram
 
-![Data Flow Diagram](docs/Diagrams/DFD.png)
+![Data Flow Diagram](../docs/Diagrams/DFD.png)
 
 ## R3: Application Architecture Diagram
 
-![Application Architecture Diagram](docs/Diagrams/Application%20Architecture%20Diagram.png)
+![Application Architecture Diagram](../docs/Diagrams/Application%20Architecture%20Diagram.png)
 
 ## R4: User Stories
 
@@ -130,17 +130,17 @@ Revised & refined -
 ### Desktop
 
 <!-- Large diagram, decided to embed it as a downloadable pdf file -->
-<object data="./docs/Diagrams/RT_Desktop_Wireframe.pdf" type="application/pdf" width="700px" height="700px">
-  <embed src="./docs/Diagrams/RT_Desktop_Wireframe.pdf">
-    <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./docs/Diagrams/RT_Desktop_Wireframe.pdf">Desktop Wireframe Diagram</a>.</p>
+<object data="../docs/Diagrams/RT_Desktop_Wireframe.pdf" type="application/pdf" width="700px" height="700px">
+  <embed src="../docs/Diagrams/RT_Desktop_Wireframe.pdf">
+    <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../docs/Diagrams/RT_Desktop_Wireframe.pdf">Desktop Wireframe Diagram</a>.</p>
   </embed>
 </object>
 
 ### Mobile Phone
 
-<object data="./docs/Diagrams/RT_Phone_Wireframe.pdf" type="application/pdf" width="700px" height="700px">
-  <embed src="./docs/Diagrams/RT_Phone_Wireframe.pdf">
-    <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./docs/Diagrams/RT_Phone_Wireframe.pdf">Phone Wireframe Diagram</a>.</p>
+<object data="../docs/Diagrams/RT_Phone_Wireframe.pdf" type="application/pdf" width="700px" height="700px">
+  <embed src="../docs/Diagrams/RT_Phone_Wireframe.pdf">
+    <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../docs/Diagrams/RT_Phone_Wireframe.pdf">Phone Wireframe Diagram</a>.</p>
   </embed>
 </object>
 
@@ -148,20 +148,22 @@ Revised & refined -
 
 ### 28-06-2023 - Planning
 
-![Trello 28/06/23](docs/Trello%20Screenshots/20230628/Trello%20Screenshot%202023-06-28%20193603.jpg)
+![Trello 28/06/23](../docs/Trello%20Screenshots/20230628/Trello%20Screenshot%202023-06-28%20193603.jpg)
 
-![Trello 28/06/23](docs/Trello%20Screenshots/20230628/Trello%20Screenshot%202023-06-28%20193923.jpg)
+![Trello 28/06/23](../docs/Trello%20Screenshots/20230628/Trello%20Screenshot%202023-06-28%20193923.jpg)
 
 ### 05-07-2023 - Project underway
 
-![Trello 05/07/23](docs/Trello%20Screenshots/20230705/Trello%20Screenshot%202023-07-05%20194326.png)
+![Trello 05/07/23](../docs/Trello%20Screenshots/20230705/Trello%20Screenshot%202023-07-05%20194326.png)
 
-![Trello 05/07/23](docs/Trello%20Screenshots/20230705/Trello%20Screenshot%202023-07-05%20193568.png)
+![Trello 05/07/23](../docs/Trello%20Screenshots/20230705/Trello%20Screenshot%202023-07-05%20193568.png)
 
 ### 12-07-2023 - Completing Part A
 
-![Trello 12/07/23](docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20091423.jpg)
+![Trello 12/07/23](../docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20091423.jpg)
 
-![Trello 12/07/23](docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20221352.jpg)
+![Trello 12/07/23](../docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20221352.jpg)
 
-![Trello 12/07/23](docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20221535.jpg)
+![Trello 12/07/23](../docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20221535.jpg)
+
+### 06-08-2023 - Completing Part B
