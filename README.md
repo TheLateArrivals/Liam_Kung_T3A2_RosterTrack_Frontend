@@ -167,3 +167,56 @@ Revised & refined -
 ![Trello 12/07/23](../docs/Trello%20Screenshots/20230712/Trello%20Screenshot%202023-07-12%20221535.jpg)
 
 ### 06-08-2023 - Completing Part B
+
+## R7: Libraries/Dependancies:
+
+### Backend
+bcrypt (v5.1.0): a library for hashing and verifying passwords.
+
+cors (v2.8.5): middleware for enabling CORS in Express applications. It allows for the specification of which sources are permitted to access your server.
+
+dotenv (v16.3.1): module that loads environment variables from a .env file into process.env. This makes it easier to manage configuration settings without hardcoding them into the application.
+
+express (v4.18.2): minimalistic web framework for Node.js, making it easier to build and manage web servers.
+
+helmet (v7.0.0): middleware functions to help secure Express-based applications by setting various HTTP headers.
+
+jsonwebtoken (v9.0.1): a library for creating and verifying JSON Web Tokens (JWT). It's commonly used for handling authentication and authorization.
+
+mongodb (v5.6.0): MongoDB driver for Node.js, allowing for direct communication with MongoDB databases.
+
+mongoose (v7.3.1): An elegant object modeling tool for MongoDB and Node.js. It provides a schema-based solution to model application data.
+
+passport (v0.6.0): authentication middleware for Node.js, offering various strategies to authenticate requests.
+
+supertest (v6.3.3): testing library for HTTP assertions, making it easier to test Express routes.
+
+devDependencies: cross-env (v7.0.3): A utility that allows for setting and using environment variables across platforms (Windows, macOS, Linux) in a consistent manner.
+
+### Frontend
+@fullcalendar/: set of libraries providing functionality for a full-sized drag & drop event calendar.
+
+axios (v1.4.0): HTTP client for making asynchronous requests. It's often used in React applications to fetch or send data to an API.
+
+express (v4.18.2): minimalistic web framework for Node.js. Its presence in a frontend project might indicate some server-side functionality or a mock server for development.
+
+moment (v2.29.4): JavaScript library for parsing, validating, manipulating, and formatting dates.
+
+react (v17.0.2) & react-dom (v17.0.2): core libraries for building React applications.
+
+react-router-dom (v6.14.2): standard library for adding navigation into a React application.
+
+react-scripts (v2.1.3): Scripts and configuration used by Create React App (CRA).
+
+styled-components (v6.0.5): library for styling React components.
+
+user-event (v14.4.3): Simulates user events like typing, clicking, etc.
+
+jest-dom (v5.17.0): JS testing.
+
+react (v11.2.7): testing React components.
+
+#### devDependencies:
+@babel/preset-env & @babel/preset-react: Babel presets for compiling modern JavaScript and React JSX into backwards-compatible JavaScript.
+
+identity-obj-proxy (v3.0.0): A proxy object for mocking modules in tests, often used with CSS Module imports in Jest.
